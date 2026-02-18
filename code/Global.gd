@@ -14,6 +14,8 @@ func _input(event: InputEvent):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	elif event is InputEventJoypadMotion:
 		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	elif event.is_action_pressed('exit_game'):
+		get_tree().quit()
 
 func check_is_controller_connected() -> bool:
 	return 0 < Input.get_connected_joypads().size()
